@@ -1,0 +1,20 @@
+.App {
+  min-height: 100vh;
+  background-color: #fdb666;
+  font-family: Rubik;
+}
+
+.App-header {
+  background-color: #fafafa;
+  min-height: 5vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.App-body {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10vw;
+  margin-right: 10vh;
+}
