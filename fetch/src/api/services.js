@@ -6,9 +6,16 @@ const fetchWithCreds = (url, options = {}) =>
     credentials: 'include',
     headers: { 'Content-Type': 'application/json', ...options.headers },
     ...options,
-  }).then((res) => {
+  }).then(async (res) => {
     if (!res.ok) throw new Error('API request failed');
-    return res.json();
+
+    const contentType = res.headers.get('content-type');
+    if (contentType && contentType.includes('application/json')) {
+      return res.json();
+    } else {
+      // no json to parse
+      return null;
+    }
   });
 
 //Login
