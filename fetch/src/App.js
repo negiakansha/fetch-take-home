@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         {/* <a href="/login" className="home-link"> */}
-          <img src="favicon.ico" className="logo"/>
+          <img src="favicon.ico" alt="fetch logo" className="logo"/>
           <h1>fetch shelters</h1>
         {/* </a> */}
       </header>

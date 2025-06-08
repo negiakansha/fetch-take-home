@@ -13,7 +13,6 @@ const SearchPage = () => {
   const [selectedBreed, setSelectedBreed] = useState('');
   const [sortOrder, setSortOrder] = useState('');
   const [page, setPage] = useState(0);
-  const [dogIds, setDogIds] = useState([]);
   const [dogs, setDogs] = useState([]);
   const [favorites, setFavorites] = useState([]);
   const [totalResults, setTotalResults] = useState(0);
@@ -45,8 +44,6 @@ const SearchPage = () => {
         const searchResult = await searchDogs(query);
         const ids = searchResult?.resultIds ?? [];
         const total = searchResult?.total ?? 0;
-
-        setDogIds(ids);
         setTotalResults(total);
 
         if (ids.length === 0) {
@@ -64,7 +61,6 @@ const SearchPage = () => {
       } catch (error) {
         console.error('Error fetching dogs:', error);
         setDogs([]);
-        setDogIds([]);
         setTotalResults(0);
       } finally {
         //make sure loading happens after everything is set

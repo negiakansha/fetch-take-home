@@ -3,7 +3,7 @@ const ImgContainer = ({images}) => {
         <div className="image-grid">
             {images.map((url, index) => (
                 <div className="image-container" key={index}>
-                    <img className="image" src={url}/>
+                    <img className="image" alt="" src={url}/>
                 </div>
             ))}
         </div>
