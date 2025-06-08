@@ -8,10 +8,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <a href="/login" className="home-link">
+        {/* <a href="/login" className="home-link"> */}
           <img src="favicon.ico" className="logo"/>
           <h1>fetch shelters</h1>
-        </a>
+        {/* </a> */}
       </header>
       <div className="App-body">
         { authorized ?
