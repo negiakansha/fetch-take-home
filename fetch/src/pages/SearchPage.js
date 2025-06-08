@@ -11,7 +11,7 @@ const SearchPage = () => {
   const [loading, setLoading] = useState(true);
   const [breeds, setBreeds] = useState([]);
   const [selectedBreed, setSelectedBreed] = useState('');
-  const [sortOrder, setSortOrder] = useState('asc');
+  const [sortOrder, setSortOrder] = useState('');
   const [page, setPage] = useState(0);
   const [dogIds, setDogIds] = useState([]);
   const [dogs, setDogs] = useState([]);
@@ -35,7 +35,12 @@ const SearchPage = () => {
       setLoading(true);
       try {
         const breedQuery = selectedBreed ? `&breeds=${encodeURIComponent(selectedBreed)}` : '';
-        const query = `?sort=breed:${sortOrder}${breedQuery}&size=${DOGS_PER_PAGE}&from=${page * DOGS_PER_PAGE}`;
+        let query;
+        if (!sortOrder) {
+          query = `?sort=breed:asc${breedQuery}&size=${DOGS_PER_PAGE}&from=${page * DOGS_PER_PAGE}`;
+        } else {
+          query = `?sort=name:${sortOrder}${breedQuery}&size=${DOGS_PER_PAGE}&from=${page * DOGS_PER_PAGE}`;
+        }
 
         const searchResult = await searchDogs(query);
         const ids = searchResult?.resultIds ?? [];
