@@ -41,6 +41,7 @@ const Filter = ({ breeds, selectedBreed, onBreedChange, sortOrder, onSortChange,
       </select>
 
       <select value={sortOrder} onChange={(e) => onSortChange(e.target.value)}>
+        <option value="" disabled hidden>--</option>
         <option value="asc">A to Z</option>
         <option value="desc">Z to A</option>
       </select>
