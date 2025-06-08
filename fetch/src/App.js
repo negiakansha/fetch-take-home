@@ -1,27 +1,28 @@
 import './App.css';
-import ImgContainer from './components/ImgContainer';
-import LoginForm from './components/LoginForm';
-
-const images = [
-    '/images/dog1.jpg',
-    '/images/dog2.jpg',
-    '/images/dog3.jpg',
-    '/images/dog4.jpg',
-    '/images/dog5.jpg',
-    '/images/dog6.jpg',
-    '/images/dog7.jpg',
-    '/images/dog8.jpg',
-]
+import { useState } from 'react';
+import LoginPage from './pages/LoginPage';
+import SearchPage from './pages/SearchPage';
 
 function App() {
+  const [authorized, setAuthorized] = useState(false);
   return (
     <div className="App">
       <header className="App-header">
-        <h1>fetch shelters</h1>
+        <a href="/login" className="home-link">
+          <img src="favicon.ico" className="logo"/>
+          <h1>fetch shelters</h1>
+        </a>
       </header>
       <div className="App-body">
-        <LoginForm />
-        <ImgContainer images={images}/>
+        { authorized ?
+          <SearchPage/>
+        : (
+          <div>
+            <LoginPage
+              setAuthorized={setAuthorized}
+            />
+          </div>
+        )}
       </div>
     </div>
   );

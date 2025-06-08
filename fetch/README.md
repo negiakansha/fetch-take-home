@@ -1,3 +1,6 @@
+# fetch-take-home
+A simple application to browse and favorite dogs on a dog shelter webpage.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

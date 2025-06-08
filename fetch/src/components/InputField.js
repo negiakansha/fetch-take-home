@@ -1,10 +1,11 @@
-const InputField = ({type, id, className, placeholder}) => {
+const InputField = ({type, id, value, placeholder, onChange}) => {
     return (
         <input
             type={type}
             id={id}
-            className={className}
+            value={value}
             placeholder={placeholder}
+            onChange={onChange}
         />
     );
 }

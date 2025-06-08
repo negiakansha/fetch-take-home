@@ -6,9 +6,12 @@
 
 .App-header {
   background-color: #fafafa;
-  min-height: 5vh;
+  min-height: 12vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  padding-left: 4rem;
 }
 
 .App-body {
@@ -17,4 +20,10 @@
   flex-direction: column;
   margin-left: 10vw;
   margin-right: 10vh;
+}
+
+.home-link {
+  text-decoration: none;
+  display: inline-flex;
+  gap: 0.4rem;
 }

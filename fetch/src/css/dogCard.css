@@ -1,0 +1,117 @@
+/* Dog Card */
+.dog-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+.dog-card {
+  display: flex;
+  flex-direction: row;
+  background-color: #fafafa;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+  width: 45%;
+  max-width: 500px;
+  height: 16rem;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  font-family: Rubik;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+.dog-card:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+}
+
+/* small screen */
+@media (max-width: 768px) {
+  .dog-card {
+    width: 90%;
+  }
+}
+
+.dog-image-wrapper {
+  position: relative;
+  flex-shrink: 0;
+  width: 15rem;
+  height: 15rem;
+  overflow: hidden;
+}
+
+.dog-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.dog-card:hover .dog-image {
+    transform: translateX(-20px);
+}
+
+/* Favorite button */
+.heart-icon {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  transition: fill 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.8;
+  z-index: 3;
+  fill: white;
+  width: 3rem;
+  height: 3rem;
+}
+
+.dog-card:hover .heart-icon {
+    transform: translate(-35px, -20px) scale(1.5);
+    opacity: 1;
+    fill: pink;
+}
+
+.favorited-icon {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  transition: transform 0.3s ease, opacity 0.3 ease;
+  transform: translate(-35px, -20px) scale(1.5);
+  opacity: 1;
+  z-index: 3;
+  fill: pink;
+  width: 3rem;
+  height: 3rem;
+}
+
+.dog-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 16px;
+  text-align: left;
+}
+
+.dog-info p {
+  margin: 4px 0;
+  font-size: 1rem;
+  color: #444;
+}
+
+.dog-name {
+  margin: 0 0 12px 0;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #212730;
+  letter-spacing: 0.03em;
+}
+
+.label {
+  font-weight: 600;
+  color: #212730;
+  margin-right: 6px;
+  border-bottom: 2px solid #fd9d33;
+}

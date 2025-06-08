@@ -1,0 +1,48 @@
+.filter-menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1.5rem; 
+  margin-bottom: 1.5rem;
+}
+
+.filter-menu input,
+.filter-menu select {
+  border: none;
+  border-radius: 50px;
+  font-family: Rubik, sans-serif;
+  font-size: 16px;
+  padding: 10px;
+  max-width: 30vw;
+  box-sizing: border-box;
+}
+
+/* small screen */
+@media (max-width: 600px) {
+  .filter-menu {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.match-button {
+  margin-top: 0;
+  color: white;
+  border: none;
+  background-color: #fc8500;
+  padding: 10px;
+  max-width: 40vw;
+  font-family: Rubik;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.1s ease, font-size 0.3s ease;
+}
+
+.match-button:hover {
+    transition: ease 0.3s;
+    border: none;
+    background-color: pink;
+    font-size: 22px;
+}

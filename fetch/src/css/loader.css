@@ -1,0 +1,88 @@
+/* OpenSource Paw Animation Loader from CodePen */
+/* Look in LICENSE file for more info */
+.rainbow-memorial-loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.rainbow-memorial-loader {
+    position: relative;
+    transform: rotate(90deg);
+    font-size: 50px;
+    width: 1em;
+    height: 3em;
+    color: #fafafa;
+}
+
+.rainbow-memorial-loader .paw {
+    width: 1em;
+    height: 1em;
+    animation: 2050ms rainbowPawAnimation ease-in-out infinite;
+    opacity: 0;
+    display: inline-block;
+}
+
+.rainbow-memorial-loader .paw:nth-child(odd) {
+    transform: rotate(-10deg);
+}
+
+.rainbow-memorial-loader .paw:nth-child(even) {
+    transform: rotate(10deg) translate(125%, 0);
+}
+
+.rainbow-memorial-loader .paw:nth-child(1) {
+    animation-delay: 1.25s;
+}
+
+.rainbow-memorial-loader .paw:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.rainbow-memorial-loader .paw:nth-child(3) {
+    animation-delay: 0.75s;
+}
+
+.rainbow-memorial-loader .paw:nth-child(4) {
+    animation-delay: 0.5s;
+}
+
+.rainbow-memorial-loader .paw:nth-child(5) {
+    animation-delay: 0.25s;
+}
+
+.rainbow-memorial-loader .paw:nth-child(6) {
+    animation-delay: 0s;
+}
+
+.rainbow-memorial-loader svg {
+    width: 100%;
+    height: 100%;
+}
+
+.rainbow-memorial-loader .icon {
+    fill: #fafafa;
+}
+
+@keyframes rainbowPawAnimation {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+p {
+    font-family: Rubik;
+    margin-top: 50px;
+}
