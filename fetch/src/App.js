@@ -4,7 +4,7 @@ import LoginPage from './pages/LoginPage';
 import SearchPage from './pages/SearchPage';
 
 function App() {
-  const [authorized, setAuthorized] = useState(false);
+  const [authorized, setAuthorized] = useState(false);  
   return (
     <div className="App">
       <header className="App-header">
@@ -14,15 +14,7 @@ function App() {
         {/* </a> */}
       </header>
       <div className="App-body">
-        { authorized ?
-          <SearchPage/>
-        : (
-          <div>
-            <LoginPage
-              setAuthorized={setAuthorized}
-            />
-          </div>
-        )}
+        { authorized ? <SearchPage /> : <LoginPage setAuthorized={setAuthorized} /> }
       </div>
     </div>
   );

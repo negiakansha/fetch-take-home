@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import '../index.css';
 import InputField from './InputField';
-import { fetchWithCreds } from '../api/utils';
+import { login } from '../api/services';
 
 const LoginForm = ({ onSubmit }) => {
     const [name, setName] = useState('');
@@ -11,10 +11,7 @@ const LoginForm = ({ onSubmit }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await fetchWithCreds('/auth/login', {
-                method: 'POST',
-                body: JSON.stringify({ name, email }),
-            });
+            await login(name, email);
             onSubmit();
         } catch (error) {
             setError('Failed to log in. Please try again.');
